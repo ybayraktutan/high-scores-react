@@ -1,6 +1,7 @@
 import React from "react";
+import PlayerScore from "./PlayerScore"
 
-function HighScoreTable(props) {
+function HighScoreTable (props) {
   return (
     <div>
       {props.scores.sort((country1, country2) =>(
@@ -9,21 +10,7 @@ function HighScoreTable(props) {
         .map((country, index) => (
           <div>
             <h3 key ={index} className="country-name">HIGH SCORE: {country.name}</h3>
-            <table>
-                <tr>
-                  <th>Player Name</th>
-                  <th>Player Score</th>
-                </tr>
-                {country.scores.sort((player1, player2) => (
-                  player2.s - player1.s
-                  ))
-                .map((score) => (
-                  <tr>
-                    <td className ="player-name">{score.n.toUpperCase()}</td>
-                    <td className ="player-score">{score.s}</td>
-                  </tr>
-                ))}
-            </table>
+            <PlayerScore scores = {country.scores}/>
           </div>
       ))}
     </div>
