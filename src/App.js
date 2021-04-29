@@ -1,6 +1,7 @@
 import './App.css';
 import Scores from './Scores'
 import HighScoreTable from './HighScoreTable';
+import WorldWideSores from './WorldWideScores';
 
 
 
@@ -8,9 +9,7 @@ import HighScoreTable from './HighScoreTable';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>High Score per Country</h1>
-      </header>
+      <WorldWideSores scores = {Scores} />
       <HighScoreTable scores = {Scores} />
     </div>
   );
